@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import router from "./routers/userRouter";
 // import { initializeFirebaseApp } from "./lib/firebase";
+import cors from "cors";
 class App {
   public app: Application;
 
@@ -13,6 +14,7 @@ class App {
 
   private config(): void {
     this.app.use(express.json());
+    this.app.use(cors());
   }
 
   private routes(): void {
